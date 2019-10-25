@@ -1,7 +1,7 @@
 ﻿import React, { Component } from "react";
 import ContentComponent from "./GroupComponent"
 import classnames from "classnames";
-import styles from"./Login.css"
+
 
 export default class Login extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div id="mainContent" className={classnames( styles.center,"container")}>
+      <div id="mainContent" className={classnames("container")}>
           <ContentComponent />
       </div>
     );

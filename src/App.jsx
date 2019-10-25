@@ -9,6 +9,7 @@ import Grid from "./components/Grid";
 import List from "./components/List";
 import Login from "./components/Login"
 import Master_Detail from "./components/Master_Detail";
+import Main from "./components/Main";
 //TODO Web Template Studio: Add routes for your new pages here.
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
           <Route path = "/List" component = { List } />
           <Route path = "/Master_Detail" component = { Master_Detail } />
           <Route path = "/Login" component = { Login } />
+          <Route path = "/Main" component = { Main } />
         </Switch>
         {/* <Footer /> */}
       </React.Fragment>

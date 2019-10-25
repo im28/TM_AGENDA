@@ -1,8 +1,8 @@
 import React from "react";
-import TagComponent from "./MiniComponents/TagComponent"
-import InputComponent from "./MiniComponents/InputComponent";
-import CustomButtonBig from "./MiniComponents/CustomButtonBig";
-import styles from "./MiniComponents/miniComponents.module.sass"
+import TagComponent from "../MiniComponents/TagComponent"
+import InputComponent from "../MiniComponents/InputComponent";
+import CustomButtonBig from "../MiniComponents/CustomButtonBig";
+import styles from "../MiniComponents/miniComponents.module.sass"
 import { Link } from "react-router-dom";
 
 const GroupComponent = () => (

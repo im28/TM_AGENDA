@@ -11,6 +11,11 @@ $TMred: #CD202C;
   $remSize: $size / 16px;
   @return #{$remSize}rem;
 
+@function get-vw($target) 
+  $vw-context: (1000*.01) * 1px;
+  @return ($target/$vw-context) * 1vw;
+
+
 @mixin center($width: null, $height: null) 
   position: absolute;
   top: 50%;
@@ -122,3 +127,14 @@ $TMred: #CD202C;
   color: $TMred
   &:hover
     color: darken($TMred,20% )
+
+.bg
+  margin-left: 14vw;
+  width: calc(100vw -14vw);
+  height: 100vh;
+  background-color: white;
+
+.side
+  width: 100vw; 
+  height: 100vh;
+  background-color: $TMblue;
