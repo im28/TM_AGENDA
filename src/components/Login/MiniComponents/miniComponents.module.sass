@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,600,700&display=swap');
+// :root 
+//     --font-bold: Bold 32px/30px Montserrat;
+//     --font-SemiBold: 600 36px/44px Montserrat;
+$TMyellow: #F2DF74;
+$TMblue: #004165;
+$TMgray: #A9B2B1;
+$TMred: #CD202C;
+
+@function calculateRem($size) 
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+
+@mixin center($width: null, $height: null) 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  @if not $width and not $height 
+    transform: translate(-50%, -50%);
+  @else if $width and $height 
+    width: $width;
+    height: $height;
+    margin: -($width / 2) #{0 0} -($height / 2);
+  @else if not $height 
+    width: $width;
+    margin-left: -($width / 2);
+    transform: translateY(-50%);
+  @else 
+    height: $height;
+    margin-top: -($height / 2);
+    transform: translateX(-50%);
+
+@mixin centerHorizontal()
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+
+@mixin SemiBold 
+  font-family:  Montserrat;
+  font-weight: 600;
+  letter-spacing: 0.01rem;
+
+@mixin Bold 
+  font-family:  Montserrat;
+  font-weight: 700;
+
+@mixin Regular  
+  font-family:  Montserrat;
+  font-weight: 500;
+
+.tagComponent 
+  @include Regular;
+  @include centerHorizontal;
+  width: calculateRem(217px*0.7);
+  text-align: center;
+  font-size: calculateRem(28px*0.7);
+  padding: calculateRem(15px*0.7) calculateRem(23px*0.7) ;
+  margin-top: calculateRem(88px*0.7);
+  color: $TMgray;
+  border: 1px solid $TMgray;
+  border-radius: calculateRem(50px);
+  user-select: none;
+
+.input
+  @include Regular
+  margin-bottom: calculateRem(77px*0.7) 
+  width: calculateRem(666px*0.7);
+  display: block;
+  border: none;
+  padding: 1rem 0;
+  border-bottom: solid 1px $TMgray;
+  transition: all 0.3s cubic-bezier(.64,.09,.08,1);
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, $TMblue 4%);
+  background-position: calculateRem(-666px*0.7) 0;
+  background-size: calculateRem(666px*0.7) 100%;
+  background-repeat: no-repeat;
+  color: $TMblue;
+  &:focus
+    box-shadow: none;
+    outline: none;
+    background-position: 0 0;
+    color: $TMblue;
+    &::-webkit-input-placeholder 
+      color: $TMblue;
+      font-size: 11px;
+      transform: translateY(-20px);
+      visibility: visible !important;
+
+  
+.loginInput
+  @include centerHorizontal()
+  margin-top: calculateRem(276px*0.7);
+
+.customButtonBig
+  user-select: none;
+  @include SemiBold
+  @include centerHorizontal()
+  font-size: calculateRem(28px*0.7);
+  width: calculateRem(666px*0.7);
+  margin-top: calculateRem(600px*0.7);
+  background-color: $TMblue;
+  color: white;
+  padding: 1rem 0;
+  border-radius: calculateRem(52px*0.7);
+  border: 0px;
+  transition: background 0.8s;
+  &:hover
+    background: lighten($TMblue, 10%) radial-gradient(circle, transparent 1%, lighten($TMblue, 10%) 1%) center/15000%;
+  &:active
+    // background-color: lighten($TMblue, 20%);
+    background-color: lighten($TMblue, 20%);;
+    background-size: 100%;
+    transition: background 0s;
+
+.forgotLogin
+  @include SemiBold
+  @include centerHorizontal()
+  margin-top: calculateRem(776px*0.7);
+  font-size: calculateRem(24px*0.7);
+  color: $TMred
+  &:hover
+    color: darken($TMred,20% )
