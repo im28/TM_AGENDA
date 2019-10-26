@@ -2,11 +2,12 @@ import React from "react";
 import TagComponent from "../MiniComponents/TagComponent"
 import InputComponent from "../MiniComponents/InputComponent";
 import CustomButtonBig from "../MiniComponents/CustomButtonBig";
-import styles from "../MiniComponents/miniComponents.module.sass"
+import styles from "../MiniComponents/miniComponents.module.sass";
+import classnames from "classnames";
 import { Link } from "react-router-dom";
 
 const GroupComponent = () => (
-<div>
+<div className={classnames("container",styles.container)}>
     <TagComponent value="SIGN IN"/>
     <InputComponent/>
     <Link  to="Blank">

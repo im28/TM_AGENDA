@@ -15,9 +15,9 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div id="mainContent" className={classnames("container")}>
+      <main id="mainContent" className={classnames("container")}>
           <ContentComponent />
-      </div>
+      </main>
     );
   }
 }
