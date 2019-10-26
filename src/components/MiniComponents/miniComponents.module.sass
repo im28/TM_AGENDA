@@ -130,15 +130,56 @@ $TMred: #CD202C;
 
 .bg
   margin-left: 14vw;
-  width: calc(100vw -14vw);
+  width: 86vw;
   height: 100vh;
   background-color: white;
+  position: absolute;
 
 .side
   width: 100vw; 
   height: 100vh;
   background-color: $TMblue;
+  margin: 0;
+
 
 .container
   width: 100vw;
   height: 100vh;
+
+.grid-container 
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+.customButton
+  user-select: none;
+  @include SemiBold
+  @include centerHorizontal()
+  font-size: calculateRem(20px*0.7);
+  width: calculateRem(192px*0.7);
+  background-color: white;
+  padding: calculateRem(11px*0.7) 0;
+  border-radius: calculateRem(23px*0.7);
+  border: 0px;
+  transition: background 0.8s;
+  display:   block;
+  &:hover
+    background: lighten($TMblue, 10%) radial-gradient(circle, transparent 1%, lighten($TMblue, 10%) 1%) center/15000%;
+  &:active
+    background-color: lighten($TMblue, 20%);;
+    background-size: 100%;
+    transition: background 0s;
+
+.roleContainer
+  margin: 2rem;
+
+  width: calculateRem(343px*0.7);
+  height: calculateRem(281px*0.7);
+  background-color: $TMblue;
+  border-radius: 0 calculateRem(80px*0.7) 0 calculateRem(80px*0.7);
+
+  display: flex;        
+  justify-content: center;
+  align-items: center;
+  flex-direction: row
+

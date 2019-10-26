@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import styles from "./main.module.sass"
 
-class Main extends Component{
+class MainComponent extends Component{
     constructor(props) {
         super(props);
 
@@ -100,4 +100,4 @@ class Main extends Component{
     }
 }
 
-export default Main;
+export default MainComponent;
