@@ -3,7 +3,7 @@ import styles from "./miniComponents.module.sass"
 
 
 const CustomButton = (props) => (
-    <button className={ styles.customButton}>
+    <button className={ styles.customButton} style = {props.style}>
         {props.value}
     </button>
 );
