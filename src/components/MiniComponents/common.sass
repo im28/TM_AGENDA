@@ -1,4 +1,4 @@
-
+@import "mediaq"
 // :root 
 //     --font-bold: Bold 32px/30px Montserrat;
 //     --font-SemiBold: 600 36px/44px Montserrat;
@@ -18,3 +18,10 @@ $TMred: #CD202C;
 
 .TMred 
   color: $TMred    
+
+.g
+  // grid-column: 2 
+  @include md 
+    grid-column: 1;
+  @include lg 
+    grid-column: 2;
