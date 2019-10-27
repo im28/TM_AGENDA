@@ -5,7 +5,13 @@ import classnames from "classnames";
 import RoleContainer from "./RoleContainer";
 const Bg = (props) => (
 
-    <div className={classnames( styles.bg)}>
+    <div className={classnames( styles.bg,styles.gridContainer)}>
+        <RoleContainer/>
+        <RoleContainer/>
+        <RoleContainer/>
+        <RoleContainer/>
+        <RoleContainer/>
+        <RoleContainer/>
         <RoleContainer/>
     </div>
 );
