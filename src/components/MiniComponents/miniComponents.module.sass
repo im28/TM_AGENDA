@@ -166,7 +166,7 @@ $TMred: #CD202C;
   grid-row-gap: calculateRem(78px*0.7);
   grid-column-gap: calculateRem(44px*0.7);
   transition: all 0.5s;
-  justify-content: space-evenly
+  // justify-content: space-evenly
   @include sm 
     grid-template-columns: repeat(1,calculateRem(343px*0.7));
   @include md 
@@ -183,7 +183,8 @@ $TMred: #CD202C;
   padding: 0.2rem;
   // grid-template-columns: repeat(4,calculateRem(343px*0.7));
   // grid-template-rows: repeat(2,calculateRem(281px*0.7));
-  grid-column-gap: calculateRem(44px*0.7);
+  grid-column-gap: calculateRem(12px*0.7);
+  width: calculateRem(1504px*0.7);
   grid-row-gap: calculateRem(78px*0.7);
   justify-content: space-evenly
   transition: all 0.5s;
@@ -204,7 +205,8 @@ $TMred: #CD202C;
 .gridContainerSpeaker
   @include centerHorizontal()
   @include gridContainer()
-  margin-top: calculateRem(140px*0.7) 
+
+  justify-content: space-evenly;
 
   
 
