@@ -7,13 +7,24 @@
   justify-items: center; 
   height: 58vmin
   width: 14vmin
+  top: 50%
   margin-left: 7vw
-  transform: translate(-50%,36%);
+  transform: translate(-50%,-50%);
   @include sm
     margin-left: 10vw;
   @include md
     margin-left: 7vw;
     
+.navigator_select
+    position: absolute
+    height: 22vmin
+    width: 28vmax
+    top: 52%
+    transform: translate(0%,50%);
+    left: -10vmax
+    border: 0.6rem white solid;
+    border-left:  0;
+    border-radius: calculateRem(60px);
 
 .navigator_icon
     display: flex;
@@ -21,7 +32,8 @@
     justify-content: center;
     flex-direction: column;
     background-color: #fff
-    width:  14vmin
+    width:  12vmin
+    height: 12vmin
     border-radius: calculateRem(22px);
     font-size: 5vmin
     text-align: center

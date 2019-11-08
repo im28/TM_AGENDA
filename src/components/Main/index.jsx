@@ -20,6 +20,7 @@ export default class Main extends Component {
       <div id="mainContent" 
       className={classnames( styles.side)}
       >
+        <div className={"navigator_select"}/>
         <div className={"navigator"}>
           <div className={"navigator_icon"}>
             {/* <i className="fas fa-calendar-alt"></i> */}

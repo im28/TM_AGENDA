@@ -9,7 +9,9 @@ const RoleContainer = (props) => (
     className={classnames(styles.roleContainer,props.class)} 
     style={{backgroundColor:props.color,height:(props.isSpeaker) ? "15rem":""}}>
             <p className={styles.roleTag}>{props.name ? props.name:"hello"}</p>
-            <i className={classnames(styles.icon,props.icon)} ></i>
+            <i className={classnames(styles.icon,props.icon)} >
+                {/* {props.icon} */}
+            </i>
             
 
             {props.isMyRole ?   <button className={classnames("btnExit",props.colorname)}>
@@ -19,8 +21,6 @@ const RoleContainer = (props) => (
                 value="Apply" 
                 style={{
                     marginBottom: (props.isSpeaker) ? "0.5rem" :"1.75rem",
-                    positon:"absolute" ,
-                    marginTop: "5rem",
                     justifySelf: "flex-end"}}
                 color= {props.colorname}
             />
