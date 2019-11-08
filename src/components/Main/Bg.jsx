@@ -4,46 +4,49 @@ import classnames from "classnames";
 // import CustomButton from "../MiniComponents/CustomButton"
 import RoleContainer from "./RoleContainer";
 
-let colors={
-    TMyellow: "#F2DF74",
-    TMblue: "#004165",
-    TMgray: "#A9B2B1",
-    TMred: "#CD202C"
-}
-let rolePram = {
-    color:"",
-    icon:"",
-    center:"",
-    name: ""
-}
+let colors=["#772432","#004165","#CD202C","#F2DF74"]
+let colorname=["TMpurple","TMblue","TMred","TMyellow"]
+
 let name = ["Toastmaster of the evening","Surgent At Arms","Grammarian","Ah-Counter" ,"General Evaluator","Topic Master","Timer"]
-let icon = ["mic_none","bookmark","menu_book"]
-let secondRow ={
-    marginTop:"25rem",
-    gridTemplateColumns: "auto auto auto",
-    justifyItems: "end",
-    gridColumnGap:"0",
-    paddingLeft: "7.8rem",
-    paddingRight: "7.8rem"
-}
+// let icon = ["mic_none","bookmark","menu_book"]
+
 const Bg = (props) => (
 
     <div className={classnames(styles.bg)}>
         <p className={styles.dateHeader}>MONDAY 15TH OCTOBER</p>
         <p className={styles.tag} style={{  marginTop: "5.5rem"}}>Roles</p>
-        <div className={classnames(styles.gridContainerSpeaker ,"container")}>
+        <div className={classnames(styles.gridContainerSpeaker )}>
             {   name.map((item,index) => (
-                    <RoleContainer name={item} class={"div"+parseInt(index+1)} key={"Role"+index}/>
+                    <RoleContainer 
+                    name={item} 
+                    class={"div"+parseInt(index+1)} 
+                    key={"Role"+index} 
+                    color= {colors[index%4]}
+                    colorname= {colorname[index%4]}
+                    />
                 ))
             }
         </div>
         <p className={styles.tag}>Speakers & Evaluators</p>
-        <div className={classnames(styles.gridContainerSpeaker  ,"container")}
+        <div className={classnames(styles.gridContainerSpeaker)}
         style={{  marginBottom: "2.5rem"}}>
-            <RoleContainer class={"div11"}/>
+            {
+                colors.map((item,index) => (
+                    <RoleContainer 
+                    name={"Speaker "+ parseInt(index+1)} 
+                    class={"div1"+parseInt(index+1)} 
+                    key={"Speaker"+index} 
+                    color= {item}
+                    colorname= {colorname[index]}
+                    isSpeaker= {true}
+                    // icon="mic"
+                    />
+                ))
+            }
+            {/* <RoleContainer class={"div11"}/>
             <RoleContainer class={"div12"}/>
             <RoleContainer class={"div13"}/>
-            <RoleContainer class={"div14"}/>
+            <RoleContainer class={"div14"}/> */}
         </div>
     </div>
 );

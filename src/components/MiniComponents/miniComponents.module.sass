@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500,600,700&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons')
-
+@import "../fontawesome/scss/fontawesome.scss";
+@import "../fontawesome/scss/solid.scss";
+@import "../fontawesome/scss/brands.scss";
 @import "mediaq"
-
 
 $TMyellow: #F2DF74;
 $TMblue: #004165;
@@ -24,36 +25,10 @@ $TMred: #CD202C;
   $remSize: $size / 16px;
   @return #{$remSize}rem;
 
-@function get-vw($target) 
-  $vw-context: (1000*.01) * 1px;
-  @return ($target/$vw-context) * 1vw;
-
-
-@mixin center($width: null, $height: null) 
-  position: absolute;
-  top: 50%;
-  left: 50%;
-
-  @if not $width and not $height 
-    transform: translate(-50%, -50%);
-  @else if $width and $height 
-    width: $width;
-    height: $height;
-    margin: -($width / 2) #{0 0} -($height / 2);
-  @else if not $height 
-    width: $width;
-    margin-left: -($width / 2);
-    transform: translateY(-50%);
-  @else 
-    height: $height;
-    margin-top: -($height / 2);
-    transform: translateX(-50%);
-
 @mixin centerHorizontal()
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-
 
 @mixin SemiBold 
   font-family:  Montserrat;
@@ -142,9 +117,7 @@ $TMred: #CD202C;
     color: darken($TMred,20% )
 
 .bg
-  // margin-left: 14vw;
   margin-bottom: 2vh;
-  // width: 86vw;
   height: 100%;
   background-color: white;
   position: absolute;
@@ -168,8 +141,6 @@ $TMred: #CD202C;
   background-color: $TMblue;
   margin: 0;
    
-
-
 .container
   width: 100vw;
   height: 100vh;
@@ -194,6 +165,7 @@ $TMred: #CD202C;
 .gridContainerSpeaker
   @include gridContainer()
   justify-content: space-evenly;
+  margin: auto;
 
   
 .customButton
@@ -207,19 +179,12 @@ $TMred: #CD202C;
   border: 0px;
   transition: background 0.8s, color 0.8s;
   position: relative;
-  &:hover
-    color: white;
-    background: lighten($TMblue, 10%) radial-gradient(circle, transparent 1%, lighten($TMblue, 10%) 1%) center/15000%;
-  &:active
-    background-color: lighten($TMblue, 20%);;
-    background-size: 100%;
-    transition: background 0s;
+
 
 .roleContainer
   text-align: center
   width: calculateRem(343px*0.7);
   height: calculateRem(281px*0.7);
-  background-color: $TMblue;
   border-radius: 0 calculateRem(80px*0.7) 0 calculateRem(80px*0.7);
   display: flex;        
   justify-content: space-between;

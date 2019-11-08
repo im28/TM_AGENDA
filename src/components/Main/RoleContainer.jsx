@@ -5,20 +5,36 @@ import classnames from "classnames";
 import "../MiniComponents/common.sass"
 
 const RoleContainer = (props) => (
-    <div className={classnames(styles.roleContainer,props.class)}>
+    <div 
+    className={classnames(styles.roleContainer,props.class)} 
+    style={{backgroundColor:props.color,height:(props.isSpeaker) ? "15rem":""}}>
             <p className={styles.roleTag}>{props.name ? props.name:"hello"}</p>
             <i className={classnames("material-icons",styles.icon)}>
                 {props.icon}
             </i>
+            <button className={classnames("btnExit",props.colorname)}>
+
+                <i className="fas fa-sign-out-alt"></i>
+            </button>
             <CustomButton 
                 value="Apply" 
                 style={{
-                    marginBottom: "1.75rem",
+                    marginBottom: (props.isSpeaker) ? "0.5rem" :"1.75rem",
                     // color:colors.TMblue ,
                     justifySelf: "flex-end"}}
-                color= "TMblue"
+                color= {props.colorname}
             />
-            
+            {   (props.isSpeaker) ?
+                    <CustomButton 
+                    value="Evaluate" 
+                    style={{
+                        marginBottom: "1.75rem",
+                        // color:colors.TMblue ,
+                        justifySelf: "flex-end"}}
+                    color= {props.colorname}
+                    />
+                :""
+            }    
     </div>
 );
 

@@ -1,4 +1,6 @@
 @import "mediaq"
+
+
 $phone: "(min-width: 576px) and (max-width: 767px)";
 $tablet: '(min-width: 768px) and (max-width: 1023px))';
 $desktop: "(min-width: 1024px)";
@@ -7,18 +9,57 @@ $TMyellow: #F2DF74;
 $TMblue: #004165;
 $TMgray: #A9B2B1;
 $TMred: #CD202C;
+$TMpurple: #772432;
+
+@mixin coloredbutton($color)
+   transition: background 0.8s, color 0.8s; 
+   &:hover
+      color: white
+      background: lighten($color, 10%) radial-gradient(circle, transparent 1%, lighten($color, 10%) 1%) center/15000%;
+   &:active
+      background-color: lighten($color, 20%);;
+      background-size: 100%;
+      transition: background 0s;
+
+.btnExit
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: white;
+   width: 2.5rem;
+   height: 2.5rem;
+   border-radius: 24px;
+   border: none ;
+   transition: background 0.8s, color 0.8s; 
+   margin-bottom: 0.5rem;
+   font-size: 1.5rem;
+
 
 .TMblue 
   color: $TMblue
+  fill: $TMblue;
+  @include coloredbutton($TMblue)
+  
 
 .TMyellow 
-  color: $TMyellow
+   color: $TMyellow
+   fill: $TMyellow;
+   @include coloredbutton($TMyellow)
 
 .TMgray 
-  color: $TMgray
+   color: $TMgray
+   fill: $TMgray;
+   @include coloredbutton($TMgray)
 
 .TMred 
-  color: $TMred    
+   color: $TMred 
+   fill: $TMred; 
+   @include coloredbutton($TMred)
+
+.TMpurple 
+   color: $TMpurple;
+   fill: $TMpurple;
+   @include coloredbutton($TMpurple)
 
 .g
   // grid-column: 2 
