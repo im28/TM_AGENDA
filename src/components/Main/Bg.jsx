@@ -8,7 +8,7 @@ let colors=["#772432","#004165","#CD202C","#F2DF74"]
 let colorname=["TMpurple","TMblue","TMred","TMyellow"]
 
 let name = ["Toastmaster of the evening","Surgent At Arms","Grammarian","Ah-Counter" ,"General Evaluator","Topic Master","Timer"]
-// let icon = ["mic_none","bookmark","menu_book"]
+let icon = ["fas fa-microphone-alt","fas fa-wrench","fas fa-bookmark","fas fa-book","fas fa-glasses","fas fa-question","fas fa-stopwatch"]
 
 const Bg = (props) => (
 
@@ -23,9 +23,9 @@ const Bg = (props) => (
                     key={"Role"+index} 
                     color= {colors[index%4]}
                     colorname= {colorname[index%4]}
+                    icon = {icon[index]}
                     />
-                ))
-            }
+                ))}
         </div>
         <p className={styles.tag}>Speakers & Evaluators</p>
         <div className={classnames(styles.gridContainerSpeaker)}
@@ -39,14 +39,9 @@ const Bg = (props) => (
                     color= {item}
                     colorname= {colorname[index]}
                     isSpeaker= {true}
-                    // icon="mic"
+                    icon="fas fa-microphone"
                     />
-                ))
-            }
-            {/* <RoleContainer class={"div11"}/>
-            <RoleContainer class={"div12"}/>
-            <RoleContainer class={"div13"}/>
-            <RoleContainer class={"div14"}/> */}
+            ))}
         </div>
     </div>
 );

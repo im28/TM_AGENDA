@@ -23,15 +23,15 @@ export default class Main extends Component {
         <div className={"navigator"}>
           <div className={"navigator_icon"}>
             {/* <i className="fas fa-calendar-alt"></i> */}
-            <p style={{fontSize:"1rem"}} className={"navigator_tag"}>You</p>
+            <p style={{fontSize:"2vmin"}} className={"navigator_tag"}>You</p>
           </div>
           <div className={"navigator_icon"}>
             <i className="fas fa-calendar-alt"></i>
-            <p style={{fontSize:"1rem"}} className={"navigator_tag"}>Next Week</p>
+            <p style={{fontSize:"2vmin"}} className={"navigator_tag"}>Next Week</p>
           </div>
           <div className={classnames("TMblue","navigator_icon")}>
-            <i class="fas fa-book-open"></i>
-            <p style={{fontSize:"1rem"}} className={"navigator_tag"}>Summary</p>
+            <i className="fas fa-book-open"></i>
+            <p style={{fontSize:"2vmin"}} className={"navigator_tag"}>Summary</p>
           </div>
         </div>
 
