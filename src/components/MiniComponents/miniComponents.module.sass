@@ -2,9 +2,8 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons')
 
 @import "mediaq"
-// :root 
-//     --font-bold: Bold 32px/30px Montserrat;
-//     --font-SemiBold: 600 36px/44px Montserrat;
+
+
 $TMyellow: #F2DF74;
 $TMblue: #004165;
 $TMgray: #A9B2B1;
@@ -143,18 +142,33 @@ $TMred: #CD202C;
     color: darken($TMred,20% )
 
 .bg
-  margin-left: 14vw;
-  width: 85.5vw;
+  // margin-left: 14vw;
+  margin-bottom: 2vh;
+  // width: 86vw;
   height: 100%;
   background-color: white;
   position: absolute;
-
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(5,auto);
+  grid-gap: 5%;
+  overflow: auto; 
+  min-width: 576px;
+  @include sm
+    width: 80vw;
+    margin-left: 20vw;
+  @include md
+    margin-left: 14vw;
+    width: 86vw;
+  
 .side
-  width: 14vw; 
-  height: 150vh;
+  position: fixed;
+  width: 100vw; 
+  height: 100vh;
   background-color: $TMblue;
   margin: 0;
-  
+   
+
 
 .container
   width: 100vw;
@@ -166,50 +180,22 @@ $TMred: #CD202C;
   grid-row-gap: calculateRem(78px*0.7);
   grid-column-gap: calculateRem(44px*0.7);
   transition: all 0.5s;
-  // justify-content: space-evenly
-  @include sm 
-    grid-template-columns: repeat(1,calculateRem(343px*0.7));
-  @include md 
-    grid-template-columns: repeat(2,calculateRem(343px*0.7));
-  @include lg 
-    grid-template-columns: repeat(3,calculateRem(343px*0.7));
-  @include xl 
-    grid-template-columns: repeat(4,calculateRem(343px*0.7));
   
 
-.gridContainerRole 
-  margin-top:  calculateRem(200px*0.7) 
+.gridContainer
   display: grid;
-  padding: 0.2rem;
-  // grid-template-columns: repeat(4,calculateRem(343px*0.7));
-  // grid-template-rows: repeat(2,calculateRem(281px*0.7));
+  padding: 0.2rem; 
   grid-column-gap: calculateRem(12px*0.7);
   width: calculateRem(1504px*0.7);
   grid-row-gap: calculateRem(78px*0.7);
   justify-content: space-evenly
   transition: all 0.5s;
-  @include sm 
-    grid-template-columns: repeat(1,calculateRem(343px*0.7));
-    grid-template-rows: repeat(6,calculateRem(281px*0.7));
-  @include md 
-    grid-template-columns: repeat(2,calculateRem(343px*0.7));
-    grid-template-rows: repeat(3,calculateRem(281px*0.7));
-  @include lg 
-    grid-template-columns: repeat(3,calculateRem(343px*0.7));
-    grid-template-rows: repeat(2,calculateRem(281px*0.7));
-  @include xl 
-    grid-template-columns: repeat(4,calculateRem(343px*0.7));
-    grid-template-rows: repeat(2,calculateRem(281px*0.7));
-    
 
 .gridContainerSpeaker
-  @include centerHorizontal()
   @include gridContainer()
-
   justify-content: space-evenly;
 
   
-
 .customButton
   user-select: none;
   @include Bold
@@ -257,14 +243,14 @@ $TMred: #CD202C;
 
 .tag
   @include Bold
-  position: absolute
   font-size: 1.4rem;
   color: $TMblue
-  left: 3%
+  margin-left: 5vw;
 
 .dateHeader
   @include SemiBold
   @include centerHorizontal()
-  margin-top: calculateRem(50px*0.7)
+  margin-top: calculateRem(30px*0.7)
   font-size: 1.4rem;
   color: $TMblue
+

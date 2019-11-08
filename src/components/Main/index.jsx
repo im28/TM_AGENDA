@@ -21,8 +21,6 @@ export default class Main extends Component {
       className={classnames( styles.side)}
       >
           <Bg/> 
-          
-          {/* <MainComponent/> */}
       </div>
     );
   }

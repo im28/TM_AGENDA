@@ -5,8 +5,8 @@ import classnames from "classnames";
 import "../MiniComponents/common.sass"
 
 const RoleContainer = (props) => (
-    <div className={classnames(styles.roleContainer,props.center)}>
-            <p className={styles.roleTag}>Toastmaster of the evening</p>
+    <div className={classnames(styles.roleContainer,props.class)}>
+            <p className={styles.roleTag}>{props.name ? props.name:"hello"}</p>
             <i className={classnames("material-icons",styles.icon)}>
                 {props.icon}
             </i>

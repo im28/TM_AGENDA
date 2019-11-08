@@ -16,7 +16,7 @@ let rolePram = {
     center:"",
     name: ""
 }
-let name = ["Toastmaster of the evening","Surgent At Arms","Grammarian","Ah-Counter" ,"G.Evaluator","Topic Master","Timer"]
+let name = ["Toastmaster of the evening","Surgent At Arms","Grammarian","Ah-Counter" ,"General Evaluator","Topic Master","Timer"]
 let icon = ["mic_none","bookmark","menu_book"]
 let secondRow ={
     marginTop:"25rem",
@@ -28,29 +28,22 @@ let secondRow ={
 }
 const Bg = (props) => (
 
-    <div className={classnames( styles.bg)}>
-        <p className={styles.tag} style={{  marginTop: "5.5rem"}}>Roles</p>
+    <div className={classnames(styles.bg)}>
         <p className={styles.dateHeader}>MONDAY 15TH OCTOBER</p>
-        <div className={classnames(styles.gridContainerSpeaker ,"container")}
-        style={{marginTop:"10rem"}}>
-            <RoleContainer/>
-            <RoleContainer/>
-            <RoleContainer/>
-            <RoleContainer/>
+        <p className={styles.tag} style={{  marginTop: "5.5rem"}}>Roles</p>
+        <div className={classnames(styles.gridContainerSpeaker ,"container")}>
+            {   name.map((item,index) => (
+                    <RoleContainer name={item} class={"div"+parseInt(index+1)} key={"Role"+index}/>
+                ))
+            }
         </div>
-        <div className={classnames(styles.gridContainerSpeaker ,"container")} 
-        style={secondRow}>
-            <RoleContainer/>
-            <RoleContainer/>
-            <RoleContainer/>
-        </div>
-        <p className={styles.tag} style={{  marginTop: "40rem"}}>Speakers & Evaluators</p>
+        <p className={styles.tag}>Speakers & Evaluators</p>
         <div className={classnames(styles.gridContainerSpeaker  ,"container")}
-        style={{marginTop:"45rem"}}>
-            <RoleContainer/>
-            <RoleContainer/>
-            <RoleContainer/>
-            <RoleContainer/>
+        style={{  marginBottom: "2.5rem"}}>
+            <RoleContainer class={"div11"}/>
+            <RoleContainer class={"div12"}/>
+            <RoleContainer class={"div13"}/>
+            <RoleContainer class={"div14"}/>
         </div>
     </div>
 );
