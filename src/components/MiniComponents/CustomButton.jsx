@@ -10,7 +10,9 @@ const CustomButton = (props) => {
     <button 
     // className={classnames(styles.customButton ) } 
     className={classnames(styles.customButton, props.color ) } 
-    style = {props.style}>
+    style = {props.style}
+    onClick={props.onClick}
+    >
         {props.value}
     </button>
 );

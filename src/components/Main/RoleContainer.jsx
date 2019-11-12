@@ -12,8 +12,6 @@ const RoleContainer = (props) => (
             <i className={classnames(styles.icon,props.icon)} >
                 {/* {props.icon} */}
             </i>
-            
-
             {props.isMyRole ?   <button className={classnames("btnExit",props.colorname)}>
                                     <i className="fas fa-sign-out-alt"></i> 
                                 </button> : ""}

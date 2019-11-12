@@ -1,5 +1,6 @@
 ﻿import React, { Component } from "react";
 import Bg from "./Bg";
+import Summary from "./Summary/Summary";
 import classnames from "classnames";
 import styles from "../MiniComponents/miniComponents.module.sass"
 import "./Side.sass"
@@ -36,7 +37,8 @@ export default class Main extends Component {
           </div>
         </div>
 
-        <Bg/> 
+        {/* <Bg/>  */}
+        <Summary/>
       </div>
     );
   }

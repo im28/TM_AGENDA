@@ -3,12 +3,14 @@
 @import "../fontawesome/scss/fontawesome.scss";
 @import "../fontawesome/scss/solid.scss";
 @import "../fontawesome/scss/brands.scss";
+@import "../fontawesome/scss/regular.scss";
 @import "mediaq"
 
 $TMyellow: #F2DF74;
 $TMblue: #004165;
 $TMgray: #A9B2B1;
 $TMred: #CD202C;
+$TMpurple: #772432;
 
 .TMblue 
   color: $TMblue
@@ -21,6 +23,7 @@ $TMred: #CD202C;
 
 .TMred 
   color: $TMred    
+
 @function calculateRem($size) 
   $remSize: $size / 16px;
   @return #{$remSize}rem;
@@ -56,7 +59,7 @@ $TMred: #CD202C;
   border-radius: calculateRem(50px);
   user-select: none;
 
-.input
+@mixin inputMixin($color)
   @include Regular
   margin-bottom: calculateRem(77px*0.7) 
   width: calculateRem(666px*0.7);
@@ -65,29 +68,45 @@ $TMred: #CD202C;
   padding: 1rem 0;
   border-bottom: solid 1px $TMgray;
   transition: all 0.3s cubic-bezier(.64,.09,.08,1);
-  background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, $TMblue 4%);
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, $color 4%);
   background-position: calculateRem(-666px*0.7) 0;
   background-size: calculateRem(666px*0.7) 100%;
   background-repeat: no-repeat;
-  color: $TMblue;
+  color: $color;
   &:focus
     box-shadow: none;
     outline: none;
     background-position: 0 0;
-    color: $TMblue;
+    color: $color;
     &::-webkit-input-placeholder 
-      color: $TMblue;
+      color: $color;
       font-size: 11px;
       transform: translateY(-20px);
       visibility: visible !important;
 
+.input
+  @include inputMixin($TMblue)
   
 .loginInput
   @include centerHorizontal()
   margin-top: calculateRem(276px*0.7);
 
-.customButtonBig
+@mixin ButtonGeneral()
   user-select: none;
+  border: 0px;  
+  
+.customButton
+  @include ButtonGeneral()
+  @include Bold
+  font-size: calculateRem(20px*0.7);
+  width: calculateRem(192px*0.7);
+  background-color: white;
+  padding: calculateRem(11px*0.7) 0;
+  border-radius: calculateRem(23px*0.7);
+  position: relative;
+  
+.customButtonBig
+  @include ButtonGeneral()
   @include SemiBold
   @include centerHorizontal()
   font-size: calculateRem(28px*0.7);
@@ -97,12 +116,10 @@ $TMred: #CD202C;
   color: white;
   padding: 1rem 0;
   border-radius: calculateRem(52px*0.7);
-  border: 0px;
-  transition: background 0.8s;
+  transition: background 0.8s, color 0.8s;
   &:hover
     background: lighten($TMblue, 10%) radial-gradient(circle, transparent 1%, lighten($TMblue, 10%) 1%) center/15000%;
   &:active
-    // background-color: lighten($TMblue, 20%);
     background-color: lighten($TMblue, 20%);;
     background-size: 100%;
     transition: background 0s;
@@ -166,20 +183,6 @@ $TMred: #CD202C;
   @include gridContainer()
   justify-content: space-evenly;
   margin: auto;
-
-  
-.customButton
-  user-select: none;
-  @include Bold
-  font-size: calculateRem(20px*0.7);
-  width: calculateRem(192px*0.7);
-  background-color: white;
-  padding: calculateRem(11px*0.7) 0;
-  border-radius: calculateRem(23px*0.7);
-  border: 0px;
-  transition: background 0.8s, color 0.8s;
-  position: relative;
-
 
 .roleContainer
   text-align: center

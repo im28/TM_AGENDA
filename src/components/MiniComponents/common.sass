@@ -10,7 +10,7 @@ $TMblue: #004165;
 $TMgray: #A9B2B1;
 $TMred: #CD202C;
 $TMpurple: #772432;
-
+   
 @mixin coloredbutton($color)
    transition: background 0.8s, color 0.8s; 
    &:hover
@@ -20,6 +20,36 @@ $TMpurple: #772432;
       background-color: lighten($color, 20%);;
       background-size: 100%;
       transition: background 0s;
+
+.TMblue 
+  color: $TMblue
+  background-color: white;
+  fill: $TMblue;
+  @include coloredbutton($TMblue)
+  
+.TMyellow 
+   color: $TMyellow
+   background-color: white;
+   fill: $TMyellow;
+   @include coloredbutton($TMyellow)
+
+.TMgray 
+   color: $TMgray
+   background-color: white;
+   fill: $TMgray;
+   @include coloredbutton($TMgray)
+
+.TMred 
+   color: $TMred 
+   background-color: white;
+   fill: $TMred; 
+   @include coloredbutton($TMred)
+
+.TMpurple 
+   color: $TMpurple;
+   background-color: white;
+   fill: $TMpurple;
+   @include coloredbutton($TMpurple)
 
 .btnExit
    display: flex;
@@ -33,40 +63,6 @@ $TMpurple: #772432;
    transition: background 0.8s, color 0.8s; 
    margin-bottom: 0.5rem;
    font-size: 1.5rem;
-
-
-.TMblue 
-  color: $TMblue
-  fill: $TMblue;
-  @include coloredbutton($TMblue)
-  
-
-.TMyellow 
-   color: $TMyellow
-   fill: $TMyellow;
-   @include coloredbutton($TMyellow)
-
-.TMgray 
-   color: $TMgray
-   fill: $TMgray;
-   @include coloredbutton($TMgray)
-
-.TMred 
-   color: $TMred 
-   fill: $TMred; 
-   @include coloredbutton($TMred)
-
-.TMpurple 
-   color: $TMpurple;
-   fill: $TMpurple;
-   @include coloredbutton($TMpurple)
-
-.g
-  // grid-column: 2 
-  @include md 
-    grid-column: 1;
-  @include lg 
-    grid-column: 2;
 
 @media (min-width: 768px)
    .div11 
