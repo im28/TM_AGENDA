@@ -10,7 +10,17 @@ class Profil extends Component{
     // constructor(props) {
     //     super(props);
     // }
-
+    componentDidMount() {
+        this.boxClick();
+        window.addEventListener("resize",  this.boxClick);
+    }
+    boxClick = (e) => {
+        var ratio = document.documentElement.clientWidth / 1920;
+        var scale = 'scale(' + ratio + ')';
+        this.setState({
+            transform: scale
+        })
+    }
     // static contextType = AuthContext;
 
     state = {
@@ -18,8 +28,8 @@ class Profil extends Component{
         lastname: "",
         totalRoles: 0,
         points: 0,
-        trophies: 0
-
+        trophies: 0,
+        transform: 0
     }
 
 
@@ -27,7 +37,8 @@ class Profil extends Component{
 
         return(
             
-            <div className={(style.bg)} >
+            <div className={(style.bg)}  >
+                <div style={{transform: this.state.transform,transformOrigin: "left top"}}>
                     <div className={ styles.profilPic}>{"hello"}</div>
                     <div className={ styles.statusRole}>{this.state.totalRoles}</div>
                     <div className={ styles.statusPoint}>{this.state.points}</div>
@@ -57,6 +68,7 @@ class Profil extends Component{
                             color= {colorname[0]}
                         />
                     </div>
+                </div>
             </div>
         )
     }

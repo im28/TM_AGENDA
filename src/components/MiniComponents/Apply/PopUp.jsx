@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState} from 'react';
 import "./PopUp.sass"
 import CustomButton from "../CustomButton"
 import CustomButtonBig from "../CustomButtonBig"
@@ -9,35 +9,28 @@ const PopUp = (props) => {
     const [inputfeild, setinputfeild] = useState(0);
     const [fininshed, setFininshed] = useState(false);
 
-    let modalHeight = [80,60,55]
+    let modalHeight = [80,78,75]
     function handleClick(){
         setinputfeild(inputfeild + 1);
         setheight(modalHeight[inputfeild+1])
     }
-    useEffect(() => {
-        const timer = setTimeout(() => {
-          props.open();
-        }, 4000);
-        return () => clearTimeout(timer);
-      }, [fininshed]);
-
+    function close(){
+        setTimeout(()=>{ props.open();},2100)
+    }
     function handleClickBack(){
         setinputfeild(inputfeild - 1);
         setheight(modalHeight[inputfeild-1])
-        if (inputfeild===2) {
-            // setFininshed(true);
-        }
     }
     
     return(
     <div className={classnames("containerPopUp",inputfeild===2 ? "fade" : "")} >
         <div className={"blur"} onClick={props.open}></div>
-        <div className={"background"}  style={{backgroundColor: props.background}} style={{height: `${height}vh`}}>
+        <div className={"background"}  style={{backgroundColor: `${props.background} `, minHeight: `${height}vh`}} >
             <div className={"date"}>MONDAY 15TH OCTOBER</div>
             <div className={"roleName"}>{props.title}</div>
             <i className={classnames("icon",props.icon)} 
-                style={{fontSize: "5.5rem",
-                        margin: "3rem 0 4rem 0",}}
+                style={{fontSize: "10vh",
+                        margin: "auto 0 auto 0",}}
             />
 
             {(props.inputElements && inputfeild === 0)&&  
@@ -56,7 +49,8 @@ const PopUp = (props) => {
                 value1= { (inputfeild === 1) && <i className="far fa-check-circle" style={{fontSize: "2rem",transform: `translate(2rem,15%)`}}></i>}
                 style={{
                     lineHeight: "2rem",
-                    margin: "auto 0 auto 0",
+                    margin: "auto 0 1rem 0",
+                    
                     left: "0",
                     transform: `translate(0)`,
                     position: "relative"
@@ -75,7 +69,7 @@ const PopUp = (props) => {
                 />
             }
             {(inputfeild === 2)&&
-                <div className={"roleName"} style={{marginBottom: "5rem"}}>
+                <div onClick={close()} className={"roleName"} style={{marginBottom: "5rem"}}>
                     Confirmed <i className="far fa-check-circle"></i>
                 </div>
             }
