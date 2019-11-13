@@ -1,5 +1,6 @@
 ﻿import React, { Component } from "react";
 import Bg from "./Bg";
+import Profil from "./Profil/Profil";
 import Summary from "./Summary/Summary";
 import classnames from "classnames";
 import styles from "../MiniComponents/miniComponents.module.sass"
@@ -38,7 +39,8 @@ export default class Main extends Component {
         </div>
 
         {/* <Bg/>  */}
-        <Summary/>
+        {/* <Summary/> */}
+        <Profil/>
       </div>
     );
   }
