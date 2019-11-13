@@ -34,9 +34,7 @@ class Profil extends Component{
 
 
     render(){
-
         return(
-            
             <div className={(style.bg)}  >
                 <div style={{transform: this.state.transform,transformOrigin: "left top"}}>
                     <div className={ styles.profilPic}>{"hello"}</div>

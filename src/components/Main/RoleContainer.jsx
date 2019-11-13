@@ -6,7 +6,7 @@ import "../MiniComponents/common.sass"
 import PopUp from "../MiniComponents/Apply/PopUp.jsx"
 
 let inputElementsRoles = [["Theme"],[],["Word of the day"],[],[],[],[]]
-let inputElementsSpeakers = ["Title","Project Number", "Pathway" ,"Title"]
+let inputElementsSpeakers = ["Title","Project Number", "Pathway" ,"Objective"]
 const RoleContainer = (props) => {
     const [open, setopen] = useState(false);
     const [openEvaluate, setopenEvaluate] = useState(false);

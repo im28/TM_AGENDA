@@ -19,12 +19,13 @@
     position: absolute
     height: 22vmin
     width: 28vmax
-    top: 52%
-    transform: translate(0%,50%);
+    top: 51%
+    transform: translate(0%,-50%);
     left: -10vmax
     border: 1vmin white solid;
     border-left:  0;
     border-radius: 5.5vmin;
+    transition: all 0.5s
 
 .navigator_icon
     display: flex;
@@ -37,6 +38,9 @@
     border-radius: 2.5vmin;
     font-size: 5vmin
     text-align: center
+
+.gray
+  color: $TMgray;  
 
 .navigator_tag
     @include Bold
