@@ -3,7 +3,7 @@ import styles from "./profil.module.sass"
 import style from "../../MiniComponents/miniComponents.module.sass"
 import CustomButton from '../../MiniComponents/CustomButton'
 // import AuthContext from '../../../context/auth-context';
-let colors=["#772432","#004165","#CD202C","#F2DF74"];
+// let colors=["#772432","#004165","#CD202C","#F2DF74"];
 let colorname=["TMpurple","TMblue","TMred","TMyellow"];
 
 class Profil extends Component{

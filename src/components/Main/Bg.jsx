@@ -1,17 +1,17 @@
 import React from "react";
 import styles from "../MiniComponents/miniComponents.module.sass"
 import classnames from "classnames";
-// import CustomButton from "../MiniComponents/CustomButton"
+import CustomButton from "../MiniComponents/CustomButton"
 import RoleContainer from "./RoleContainer";
 
 
 let colors=["#772432","#004165","#CD202C","#F2DF74"]
-let colorname=["TMpurple","TMblue","TMred","TMyellow"]
+let colorname=["TMpurple","TMblue","TMred","TMyellow","TMgray"]
 
 let name = ["Toastmaster of the evening","Surgent At Arms","Grammarian","Ah-Counter" ,"General Evaluator","Topic Master","Timer"]
 let icon = ["fas fa-microphone-alt","fas fa-wrench","fas fa-bookmark","fas fa-book","fas fa-glasses","fas fa-question","fas fa-stopwatch"]
-let inputElementsRoles = [["Theme"],[],["Word of the day"],[],[],[],[]]
-let inputElementsSpeakers = ["Title","Project Number", "Pathway" ,"Title"]
+// let inputElementsRoles = [["Theme"],[],["Word of the day"],[],[],[],[]]
+// let inputElementsSpeakers = ["Title","Project Number", "Pathway" ,"Title"]
 
 const Bg = (props) => {
     
@@ -21,7 +21,17 @@ const Bg = (props) => {
     <div className={classnames(styles.bg)}>
         
         <p className={styles.dateHeader}>MONDAY 15TH OCTOBER</p>
-        <p className={styles.tag} style={{  marginTop: "5.5rem"}}>Roles</p>
+        <CustomButton 
+            value="Logout " 
+            icon={<i class="fas fa-door-open"></i>}
+            style={{
+                margin: "1.2rem 1rem 0 0",
+                justifySelf: "flex-end",
+                background: colors[1]
+            }}
+            color= {colorname[4]}
+            />
+        <p className={styles.tag} style={{ }}>Roles</p>
         <div className={classnames(styles.gridContainerSpeaker )}>
             {   name.map((item,index) => (
                     <RoleContainer 

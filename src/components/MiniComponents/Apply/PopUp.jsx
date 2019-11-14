@@ -7,7 +7,6 @@ import classnames from "classnames";
 const PopUp = (props) => {
     const [height, setheight] = useState(80);
     const [inputfeild, setinputfeild] = useState(0);
-    const [fininshed, setFininshed] = useState(false);
 
     let modalHeight = [80,78,75]
     function handleClick(){

@@ -14,6 +14,7 @@ const CustomButton = (props) => {
     onClick={props.onClick}
     >
         {props.value}
+        {props.icon}
     </button>
 );
 }

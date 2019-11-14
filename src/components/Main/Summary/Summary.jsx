@@ -1,4 +1,4 @@
-import React ,{ useState }from "react";
+import React from "react";
 import styles from "../../MiniComponents/miniComponents.module.sass"
 import "./Summary.sass"
 import classnames from "classnames";
@@ -12,7 +12,6 @@ let colors=["#772432","#004165","#CD202C","#F2DF74"]
 let name = ["Toastmaster of the evening","Surgent At Arms","Grammarian","Ah-Counter" ,"General Evaluator","Topic Master","Timer"]
 
 const Summary = (props) => {
-    const [open, setopen] = useState(true);
     
     return(
     <div className={classnames(styles.bg)}>

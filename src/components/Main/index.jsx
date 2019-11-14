@@ -1,5 +1,5 @@
 ﻿import React ,{ useState }from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Bg from "./Bg";
 import Profil from "./Profil/Profil";
 import Summary from "./Summary/Summary";
@@ -70,8 +70,8 @@ const Index = (props) => {
           </div>
           {
             admin &&
-            <div onClick={()=>(handleTab(3))} className={classnames(tab[2] ? "TMblue" : "gray","navigator_icon")}>
-              <i className="fas fa-book-open"></i>
+            <div onClick={()=>(handleTab(3))} className={classnames(tab[3] ? "TMblue" : "gray","navigator_icon")}>
+              <i class="fas fa-user-cog"></i>
               <p style={{fontSize:"2vmin"}} className={"navigator_tag"}>Summary</p>
             </div>
           }

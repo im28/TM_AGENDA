@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState} from "react";
 import styles from "../MiniComponents/miniComponents.module.sass"
 import CustomButton from "../MiniComponents/CustomButton"
 import classnames from "classnames";
