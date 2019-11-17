@@ -3,6 +3,9 @@
 import Bg from "./Bg";
 import Profil from "./Profil/Profil";
 import Summary from "./Summary/Summary";
+import Admin from "./Admin/Admin";
+
+
 import classnames from "classnames";
 import styles from "../MiniComponents/miniComponents.module.sass"
 import "./Side.sass"
@@ -71,7 +74,7 @@ const Index = (props) => {
           {
             admin &&
             <div onClick={()=>(handleTab(3))} className={classnames(tab[3] ? "TMblue" : "gray","navigator_icon")}>
-              <i class="fas fa-user-cog"></i>
+              <i className="fas fa-user-cog"></i>
               <p style={{fontSize:"2vmin"}} className={"navigator_tag"}>Summary</p>
             </div>
           }
@@ -80,7 +83,7 @@ const Index = (props) => {
           {tab[0] ? <Profil/> : ""}
           {tab[1] ? <Bg/>: ""}
           {tab[2] ? <Summary/>: ""}
-          {tab[3] && admin ? <Summary/>: ""}
+          {tab[3] && admin ? <Admin/>: ""}
       </div>
   );
 }

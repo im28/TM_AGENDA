@@ -4,6 +4,7 @@ import CustomButton from "../MiniComponents/CustomButton"
 import classnames from "classnames";
 import "../MiniComponents/common.sass"
 import PopUp from "../MiniComponents/Apply/PopUp.jsx"
+import HalfCircleSpinner from '@bit/bondz.react-epic-spinners.half-circle-spinner';
 
 let inputElementsRoles = [["Theme"],[],["Word of the day"],[],[],[],[]]
 let inputElementsSpeakers = ["Title","Project Number", "Pathway" ,"Objective"]
@@ -35,6 +36,7 @@ const RoleContainer = (props) => {
                 <PopUp
                     open={closeModal}
                     title= {props.name}
+                    date={"MONDAY 15TH OCTOBER"}
                     icon={props.icon}
                     hasTextInput={true}
                     inputElements ={props.isSpeaker ? inputElementsSpeakers : inputElementsRoles[props.id]}
@@ -47,6 +49,7 @@ const RoleContainer = (props) => {
                 <PopUp
                     open={closeModalE}
                     title= {"Evaluator"}
+                    date={"MONDAY 15TH OCTOBER"}
                     icon={"fas fa-sticky-note"}
                     hasTextInput={true}
                     inputElements ={[]}
@@ -55,9 +58,7 @@ const RoleContainer = (props) => {
                 />
             }
             <p className={styles.roleTag}>{props.name ? props.name:"hello"}</p>
-            <i className={classnames(styles.icon,props.icon)} >
-                {/* {props.icon} */}
-            </i>
+            <i className={classnames(styles.icon,props.icon)} ></i>
             {props.isMyRole ?   <button className={classnames("btnExit",props.colorname)}>
                                     <i className="fas fa-sign-out-alt"></i> 
                                 </button> : ""}
@@ -80,6 +81,16 @@ const RoleContainer = (props) => {
                     />
                 :""
             }    
+             {/* <HalfCircleSpinner
+                color='#fff'
+                size={150}
+                style={{
+                    zIndex:1,
+                    // margin: "auto" ,
+                    top: "50%",
+                    transform: `translate(0,-50%)`,
+                }}
+            /> */}
     </div>
 )};
 

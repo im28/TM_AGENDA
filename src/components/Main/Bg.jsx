@@ -3,7 +3,7 @@ import styles from "../MiniComponents/miniComponents.module.sass"
 import classnames from "classnames";
 import CustomButton from "../MiniComponents/CustomButton"
 import RoleContainer from "./RoleContainer";
-
+import HalfCircleSpinner from '@bit/bondz.react-epic-spinners.half-circle-spinner';
 
 let colors=["#772432","#004165","#CD202C","#F2DF74"]
 let colorname=["TMpurple","TMblue","TMred","TMyellow","TMgray"]
@@ -19,18 +19,31 @@ const Bg = (props) => {
 
     return(
     <div className={classnames(styles.bg)}>
+        {/* <div className={classnames("containerPopUp","blur")} onClick={props.open} style={{zIndex:1 ,margin: 0, position:"fixed"}}>
+            <HalfCircleSpinner
+                color='#000000'
+                size={200}
+                style={{
+                    zIndex:1,
+                    margin: "auto" ,
+                    top: "50%",
+                    transform: `translate(0,-50%)`,
+                }}
+            />
+        </div> */}
+        
         
         <p className={styles.dateHeader}>MONDAY 15TH OCTOBER</p>
         <CustomButton 
             value="Logout " 
-            icon={<i class="fas fa-door-open"></i>}
+            icon={<i className="fas fa-door-open"></i>}
             style={{
                 margin: "1.2rem 1rem 0 0",
                 justifySelf: "flex-end",
                 background: colors[1]
             }}
             color= {colorname[4]}
-            />
+        />
         <p className={styles.tag} style={{ }}>Roles</p>
         <div className={classnames(styles.gridContainerSpeaker )}>
             {   name.map((item,index) => (

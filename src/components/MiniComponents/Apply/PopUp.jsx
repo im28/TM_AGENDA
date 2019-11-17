@@ -5,8 +5,12 @@ import CustomButtonBig from "../CustomButtonBig"
 import classnames from "classnames";
 
 const PopUp = (props) => {
+    let defaultscreen = 0
+    if (props.inputElements && props.inputElements.length < 0) {
+        defaultscreen = 1
+    }
     const [height, setheight] = useState(80);
-    const [inputfeild, setinputfeild] = useState(0);
+    const [inputfeild, setinputfeild] = useState(defaultscreen);
 
     let modalHeight = [80,78,75]
     function handleClick(){
@@ -25,7 +29,7 @@ const PopUp = (props) => {
     <div className={classnames("containerPopUp",inputfeild===2 ? "fade" : "")} >
         <div className={"blur"} onClick={props.open}></div>
         <div className={"background"}  style={{backgroundColor: `${props.background} `, minHeight: `${height}vh`}} >
-            <div className={"date"}>MONDAY 15TH OCTOBER</div>
+            <div className={"date"}>{props.date}</div>
             <div className={"roleName"}>{props.title}</div>
             <i className={classnames("icon",props.icon)} 
                 style={{fontSize: "10vh",
@@ -48,7 +52,7 @@ const PopUp = (props) => {
                 value1= { (inputfeild === 1) && <i className="far fa-check-circle" style={{fontSize: "2rem",transform: `translate(2rem,15%)`}}></i>}
                 style={{
                     lineHeight: "2rem",
-                    margin: "auto 0 1rem 0",
+                    margin: "auto 0 auto 0",
                     
                     left: "0",
                     transform: `translate(0)`,
