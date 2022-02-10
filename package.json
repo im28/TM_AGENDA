@@ -11,7 +11,7 @@
     "express": "^4.16.4",
     "fs-extra": "8.1.0",
     "morgan": "^1.9.1",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "react": "^16.8.4",
     "react-bootstrap": "^1.0.0-beta.14",
     "react-dom": "^16.8.4",
